@@ -15,20 +15,22 @@ spec:
         app: influx
     spec:
       containers:
+        # see https://hub.docker.com/_/influxdb/ for config options
         - image: influxdb:1.4.2-alpine
           name: influx
           env:
-            - name: influx_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: influx
-                  key: password
+            - name: INFLUXDB_DB
+              value: forecasts
+            - name: INFLUXDB_USER
+              value: graflux
+            - name: INFLUXDB_USER_PASSWORD
+              value: weatherlove
           ports:
-            - containerPort: 3306
+            - containerPort: 8086
               name: influx
           volumeMounts:
             - name: influx-persistent-storage
-              mountPath: /var/lib/influx
+              mountPath: /var/lib/influxdb
       volumes:
         - name: influx-persistent-storage
           gcePersistentDisk:
