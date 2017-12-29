@@ -19,8 +19,12 @@
     # create some persistent disks
     gcloud compute disks create --size 200GB influxdisk
     
+## delete cluster
+    
     # delete cluster "gribd-cluster-1"
     gcloud container clusters delete gribd-cluster-1 
+    
+    gcloud compute disks delete influxdisk
     
 # deploy cluster
 
