@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grafana
+  labels:
+    app: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - image: grafana/grafana:4.6.3
+          name: grafana
+          env:
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: secret
+          ports:
+            - containerPort: 3000
+              name: grafana

@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: influx
+  labels:
+    app: influx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: influx
+  template:
+    metadata:
+      labels:
+        app: influx
+    spec:
+      containers:
+        - image: influxdb:1.4.2-alpine
+          name: influx
+          env:
+            - name: influx_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: influx
+                  key: password
+          ports:
+            - containerPort: 3306
+              name: influx
+          volumeMounts:
+            - name: influx-persistent-storage
+              mountPath: /var/lib/influx
+      volumes:
+        - name: influx-persistent-storage
+          gcePersistentDisk:
+            pdName: influxdisk
+            fsType: ext4
