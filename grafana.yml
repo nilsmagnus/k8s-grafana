@@ -15,7 +15,7 @@ spec:
         app: grafana
     spec:
       containers:
-        - image: grafana/grafana:4.6.3
+        - image: grafana/grafana:master
           name: grafana
           env:
             - name: GF_SECURITY_ADMIN_PASSWORD

@@ -1,3 +1,6 @@
+
+This project is work in progress as I am learning more about kubernetes, use with caution
+
 # set up cluster on GKE with gcloud cli
 
     # get list of your projects
@@ -33,17 +36,16 @@ watch updates:
     $ kubectl get pods --watch
     $ kubectl get services --watch
 
-## deploy grafana
-
-    $ kubectl create -f grafana.yml --save-config
-    $ kubectl create -f grafana-service.yml
-    
-   
 ## deploy influx
 
     $ kubectl create -f influx.yml --save-config
     $ kubectl create -f influx-service.yml
 
+## deploy grafana
+
+    $ kubectl create -f grafana.yml --save-config
+    $ kubectl create -f grafana-service.yml
+    
 ## update deployments
 
     $ kubectl apply -f <updatedfile.yml>
