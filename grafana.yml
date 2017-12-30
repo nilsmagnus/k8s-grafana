@@ -23,3 +23,17 @@ spec:
           ports:
             - containerPort: 3000
               name: grafana
+          volumeMounts:
+                - name: config-volume
+                  mountPath: /usr/share/grafana/conf/provisioning/datasources/influxdb.yaml
+      volumes:
+          - name: config-volume
+            configMap:
+              # Provide the name of the ConfigMap containing the files you want
+              # to add to the container
+              name: grafana-config
+              items:
+              - key: datasource
+                path: datasource.yml
+      restartPolicy: Never
+
