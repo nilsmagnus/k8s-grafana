@@ -25,7 +25,7 @@ spec:
               name: grafana
           volumeMounts:
                 - name: config-volume
-                  mountPath: /usr/share/grafana/conf/provisioning/datasources/influxdb.yaml
+                  mountPath: /etc/grafana/provisioning/datasources
       volumes:
           - name: config-volume
             configMap:
@@ -34,6 +34,5 @@ spec:
               name: grafana-config
               items:
               - key: datasource
-                path: datasource.yml
-      restartPolicy: Never
+                path: default-influxdbsource.yaml
 

@@ -51,6 +51,7 @@ watch updates:
 
 ## deploy grafana
 
+    $ kubectl apply -f grafana-config.yml
     $ kubectl create -f grafana.yml --save-config
     $ kubectl create -f grafana-service.yml
     
@@ -58,7 +59,14 @@ watch updates:
 
     $ kubectl apply -f <updatedfile.yml>
     
-    
-# TODOS
 
-build a grafana-image with datasource and dashboards pre-configured
+## debugging pods
+
+    # logs for a pod:
+    $ kubectl logs <podname>
+
+    # describe pods:
+    $ kubectl describe pods <podname>
+    
+    # ssh into pod:
+    $ kubectl exec -it <podname> -- /bin/bash

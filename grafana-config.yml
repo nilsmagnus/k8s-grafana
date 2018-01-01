@@ -4,32 +4,30 @@ metadata:
   name: grafana-config
 data:
   datasource: |
-    # # list of datasources that should be deleted from the database
     delete_datasources:
       - name: Graphite
-         org_id: 1
-
+        org_id: 1
     # # list of datasources to insert/update depending
     # # whats available in the datbase
     datasources:
     #   # <string, required> name of the datasource. Required
-      - name: influsource
+        - name: influsource
     #   # <string, required> datasource type. Required
-        type: influxdb
+          type: influxdb
     #   # <string, required> access mode. direct or proxy. Required
-        access: proxy
+          access: proxy
     #   # <int> org id. will default to org_id 1 if not specified
-        org_id: 1
+          org_id: 1
     #   # <string> url
-        url: http://influx:8086
+          url: http://influx:8086
     #   # <string> database password, if used
-        password: weatherlove
+          password: weatherlove
     #   # <string> database user, if used
-        user: graflux
+          user: graflux
     #   # <string> database name, if used
-        database: forecasts
+          database: forecasts
     #   # <bool> enable/disable basic auth
-        basic_auth: false
+          basic_auth: false
     #   # <string> basic auth username
     #   basic_auth_user:
     #   # <string> basic auth password
@@ -37,7 +35,7 @@ data:
     #   # <bool> enable/disable with credentials headers
     #   with_credentials:
     #   # <bool> mark as default datasource. Max one per org
-        is_default: true
+          is_default: true
     #   # <map> fields that will be converted to json and stored in json_data
     #   json_data:
     #      graphiteVersion: "1.1"
@@ -45,12 +43,12 @@ data:
     #      tlsAuthWithCACert: true
     #   # <string> json object of data that will be encrypted.
     #   secure_json_data:
-    #     tlsCACert: "..."
+    #      tlsCACert: "..."
     #     tlsClientCert: "..."
     #     tlsClientKey: "..."
-    #   version: 1
+          version: 1
     #   # <bool> allow users to edit datasources from the UI.
-       editable: false
+          editable: false
 
 
 
