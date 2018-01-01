@@ -1,6 +1,14 @@
 
 This project is work in progress as I am learning more about kubernetes, use with caution
 
+
+## References
+
+* GKE Quickstart 
+https://cloud.google.com/kubernetes-engine/docs/quickstart
+* Kubernetes 101 
+https://kubernetes.io/docs/user-guide/walkthrough/
+
 # set up cluster on GKE with gcloud cli
 
     # get list of your projects
