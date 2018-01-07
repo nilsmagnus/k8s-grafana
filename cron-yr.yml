@@ -10,5 +10,5 @@ spec:
         spec:
           containers:
           - name: yr-gribdown
-            image: nilsmagnus/gribdown:0.1
+            image: nilsmagnus/gribdown:0.3
           restartPolicy: OnFailure

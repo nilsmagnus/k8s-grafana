@@ -63,7 +63,7 @@ With gcloud, you need to create the cluster with the version option. For example
 
 To create the cron-job, execute
 
-    $ kubectl create -f ./cron-yr.yaml
+    $ kubectl create -f ./cron-yr.yaml --save-config
     
     
 ## update deployments
