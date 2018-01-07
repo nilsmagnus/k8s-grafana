@@ -55,6 +55,17 @@ watch updates:
     $ kubectl create -f grafana.yml --save-config
     $ kubectl create -f grafana-service.yml
     
+## cron-job to fill data (experimental, needs kubernetes 1.8+)
+
+With gcloud, you need to create the cluster with the version option. For example:
+
+    $ gcloud container clusters create gribd-cluster-1 --cluster-version=1.8.5-gke.1  --num-nodes=3 --machine-type=f1-micro
+
+To create the cron-job, execute
+
+    $ kubectl create -f ./cron-yr.yaml
+    
+    
 ## update deployments
 
     $ kubectl apply -f <updatedfile.yml>
