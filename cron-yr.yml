@@ -1,0 +1,14 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: yr-gribdown
+spec:
+  schedule: "*/3 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: yr-gribdown
+            image: nilsmagnus/gribdown:0.1
+          restartPolicy: OnFailure
