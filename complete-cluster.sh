@@ -13,4 +13,4 @@ kubectl create -f grafana-service.yml
 
 ## deploy cron
 
-kubectl create -f ./cron-yr.yaml --save-config
+kubectl create -f ./cron-yr.yml --save-config
